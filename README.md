@@ -16,4 +16,8 @@
 
 ## How to install
 - #### Manual
-- #### Docker
+> - First time, run `npm install`
+> - copy `.env.example.js`, change name `.env` then set `NODE_ENV=development` or `NODE_ENV=production`
+> - run `npm run dev` for development or `npm run start` for production
+> - Development mode can be hot reload if having any change from the code
+- #### Docker (not yet :<)
