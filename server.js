@@ -19,4 +19,6 @@ AutoGenerate(() => {
   app.listen(CONFIGURATION.SV_PORT, function() {
     console.log(`Server is running at port: ${CONFIGURATION.SV_PORT}`);
   });
-})
+});
+
+module.exports = app;

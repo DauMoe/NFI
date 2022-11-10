@@ -12,12 +12,13 @@
 ## Technology:
 - ExpressJs
 - MariaDB
-- Jest (test)
+- Jest (test): Iam trying to write a test :<
 
 ## How to install
 - #### Manual
 > - First time, run `npm install`
 > - copy `.env.example.js`, change name `.env` then set `NODE_ENV=development` or `NODE_ENV=production`
+> - Start your database, create a table name `NFI` if it's not exists
 > - run `npm run dev` for development or `npm run start` for production
 > - Development mode can be hot reload if having any change from the code
 - #### Docker (not yet :<)
