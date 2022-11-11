@@ -7,12 +7,12 @@
 - [x] Withdrawal API should accept amount to withdraw and user Id, then return with the total amount that this user has after withdraw. Check also if user Id is valid
 - [x] The system should not allow user to over withdraw (user balance cannot be negative)
 - [x] The system should support decimal number for deposit and withdraw
-- [ ] Write test case
+- [x] Write test case
 
 ## Technology:
 - ExpressJs
 - MariaDB
-- Jest (test): Iam trying to write a test :<
+- Jest (test)
 
 ## How to install
 - #### Manual

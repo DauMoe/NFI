@@ -25,6 +25,29 @@ describe('PAYMENTS', function() {
       })
       .expect(200, done);
   });
+  it('Withdrawal fail because of larger than current balance', function(done) {
+    request(app)
+      .post('/payment/withdrawal')
+      .set('Accept', 'application/json')
+      .send({
+        "user_id": 1,
+        "amount": 999999999999999999999
+      })
+      .expect(400, {
+        data: '',
+        description: 'Amount is larger than your balance!'
+      }, done);
+  });
+  it('Withdrawal successful', function(done) {
+    request(app)
+      .post('/payment/withdrawal')
+      .set('Accept', 'application/json')
+      .send({
+        "user_id": 1,
+        "amount": 0.01
+      })
+      .expect(200, done);
+  });
   afterAll((done) => {
     connection.end();
     done();
