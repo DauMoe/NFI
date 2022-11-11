@@ -21,3 +21,4 @@
 > - `npm run dev`: development | `npm run start`: production | `npm run test`: testing
 > - Development mode can be hot reload if having any change from the code
 - #### Docker (not yet :<)
+##### **NOTE**: for the first time, some cases will be fail because of the DB is not migrate. Everything will be fine if you run test from the second time
