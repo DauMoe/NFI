@@ -22,7 +22,7 @@ const DepositDAO = async(user_id, amount) => {
       return DB_RESP(400, "", "user_id is not existed!");
     }
   } catch(e) {
-    console.error(FUNC_NAME + SQL_BIND + e.message);
+    if(CONFIGURATION.ENV === 'development') console.error(FUNC_NAME + SQL_BIND + e.message);
     return DB_RESP(400, "", "Has some error. Please feedback to support team! Thanks");
   }
 }
@@ -46,7 +46,7 @@ const WithDrawalDAO = async(user_id, amount) => {
       return DB_RESP(400, "", "user_id is not existed!");
     }
   } catch(e) {
-    console.error(FUNC_NAME + SQL_BIND + e.message);
+    if(CONFIGURATION.ENV === 'development') console.error(FUNC_NAME + SQL_BIND + e.message);
     return DB_RESP(400, "", "Has some error. Please feedback to support team! Thanks");
   }
 }

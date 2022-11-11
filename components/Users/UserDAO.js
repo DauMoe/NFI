@@ -19,7 +19,7 @@ const NewUserDAO = async(username, firstname, lastname) => {
       return DB_RESP(200, { USER_ID: result?.insertId });
     }
   } catch(e) {
-    console.error(FUNC_NAME + e.message);
+    if(CONFIGURATION.ENV === 'development') console.error(FUNC_NAME + e.message);
     return DB_RESP(400, "", "Has some error. Please feedback to support team! Thanks");
   }
 }

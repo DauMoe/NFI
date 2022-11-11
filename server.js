@@ -15,10 +15,12 @@ app.use(express.json({
 app.use("/users", UserRouter);
 app.use("/payment", PaymentRouter);
 
-AutoGenerate(() => {
-  app.listen(CONFIGURATION.SV_PORT, function() {
-    console.log(`Server is running at port: ${CONFIGURATION.SV_PORT}`);
-  });
+AutoGenerate(_ => {
+  if (process.env.NODE_ENV !== 'test') {
+    app.listen(CONFIGURATION.SV_PORT, function() {
+      console.info(`Server is running at port: ${CONFIGURATION.SV_PORT}`);
+    });
+  }
 });
 
 module.exports = app;

@@ -1,5 +1,5 @@
-const path          = require('path');
-require('dotenv').config({path: path.join(__dirname, "/../.env")});
+// const path          = require('path');
+// require('dotenv').config({path: path.join(__dirname, "/../.env")});
 const DEVELOPEMENT  = require('./test.config');
 const PRODUCTION    = require('./production.config');
 const TEST          = require('./test.config');

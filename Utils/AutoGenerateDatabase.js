@@ -17,14 +17,14 @@ const AutoGenerate = async function(callback) {
     Promise.allSettled([CreateUsers])
       .then(async r => {
         if (r[0].status === "rejected") {
-          console.error("(" + FILE_NAME + "- Create Users Table failed): " + r[0].reason);
+          if(CONFIGURATION.ENV === 'development') console.error("(" + FILE_NAME + "- Create Users Table failed): " + r[0].reason);
           process.exit(-1);
         }
-        console.info("Generated table");
-        callback();
+        if(CONFIGURATION.ENV === 'development') console.info("Generated table");
+        if (callback) callback();
       })
   } catch (e) {
-    console.error(FILE_NAME + e);
+    if(CONFIGURATION.ENV === 'development') console.error(FILE_NAME + e);
     process.exit(-1);
   }
 }
